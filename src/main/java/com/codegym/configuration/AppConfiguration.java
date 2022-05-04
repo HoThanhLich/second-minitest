@@ -31,7 +31,7 @@ import java.util.Properties;
 @EnableWebMvc
 @Configuration
 @ComponentScan("com.codegym")
-@EnableSpringDataWebSupport
+@EnableSpringDataWebSupport // hỗ trợ phân trang
 @EnableJpaRepositories("com.codegym.repository")
 @EnableTransactionManagement
 @PropertySource("classpath:upload_file.properties")

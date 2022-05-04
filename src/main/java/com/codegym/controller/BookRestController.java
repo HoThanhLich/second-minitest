@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.FileCopyUtils;
@@ -55,7 +56,7 @@ public class BookRestController {
     @PostMapping
     public ResponseEntity<Book> save(@ModelAttribute BookForm bookForm) {
         MultipartFile multipartFile = bookForm.getImage();
-        String fileName = bookForm.getImage().getOriginalFilename();
+        String fileName = multipartFile.getOriginalFilename();
 //        long currentTime = System.currentTimeMillis();
 //        fileName = fileName + currentTime;
         try {
